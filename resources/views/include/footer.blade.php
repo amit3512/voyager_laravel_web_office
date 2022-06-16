@@ -55,7 +55,7 @@
       <div class="col-lg-5 col-md-12 text-center text-lg-right">
         <ul class="list-inline">
           <li class="list-inline-item mx-0"><a class="d-inline-block px-3 text-white border-right"
-              href="/s/complain">{{ app()->getLocale() == 'es'? "उजुरी हाल्नुहोस्": "File a complaint"}}</a></li>
+               href="{{ url(app()->getLocale() == 'es'? 'es/s/complain':'en/s/complain') }}">{{ app()->getLocale() == 'es'? "उजुरी हाल्नुहोस्": "File a complaint"}}</a></li>
           <li class="list-inline-item mx-0"><a class="d-inline-block px-3 text-white" href="/s/contact">
            {{ app()->getLocale() == 'es'? " सम्पर्क गर्नुहोस्": "Contact Us"}}</a></li>
         </ul>

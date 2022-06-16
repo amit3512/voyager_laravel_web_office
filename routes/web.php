@@ -35,6 +35,7 @@ Route::group(['prefix' => 'es', 'middleware' => 'setLocale'], function () {
 Route::post('/complain', 'EmailController@sendComplain');
 Route::post('/contact', 'EmailController@sendContact');
 // Route::get('/d/{slug}', 'PageController@dynamicPage');
+// Route::get('/s/{slug}', 'PageController@staticPage');
 
 
 
