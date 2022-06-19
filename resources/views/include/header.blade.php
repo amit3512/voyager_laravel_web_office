@@ -11,7 +11,7 @@
               {{ app()->getLocale() == 'es'? 'बबरमहल काठमाडौं':'Babar Mahal Katnmandu' }}
             </li>
             <li><i class="fa fa-phone"></i> {{ app()->getLocale() == 'es'? 'नेपाल फोन:':'Nepal Phone:' }}<a href="tel:+977 123456789">
-                {{ app()->getLocale() == 'es'? '+९७७ १२३४५६७८९':'+977 123456789' }}
+                {{ app()->getLocale() == 'es'? '०१-५३४७५९९, ०१-५३५८४६८':'01-5347599, 015358468' }}
               </a></li>
             <li><a href="mailto: khodfo@dof.gov.np"><i class="fa fa-envelope"></i>info@cfsc.gov.np</a></li>
             <li><i class="fa fa-calendar"></i>
@@ -26,13 +26,13 @@
           <!-- Contact -->
           <ul class="top-link">
             <li class="dropdown">
-              <button style="padding: 0 13% " class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ app()->getLocale() == 'es'? 'Nepali':'English' }}
+              <button style="padding: 0 13% ; font-size: 0.9em" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ app()->getLocale() == 'es'? 'NP':'EN' }}
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <!-- <a class="dropdown-item" href="{{url('en')}}">  {{ app()->getLocale() == 'en'? 'English':'Spanish' }}</a>
                   <a class="dropdown-item"  href="{{url('es')}}">Spainish</a> -->
-                <a class="dropdown-item" href="{{ url(app()->getLocale() == 'es'? 'en':'es' ) }}"> {{ app()->getLocale() == 'es'? 'English':'Nepali' }}</a>
+                <a class="dropdown-item small"  href="{{ url(app()->getLocale() == 'es'? 'en':'es' ) }}"> {{ app()->getLocale() == 'en'? 'Nepali':'English' }}</a>
               </div>
             </li>
             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -70,11 +70,11 @@
     </div>
   </div>
   <!-- End Topbar -->
-  <div class="container p-0" style="position: relative;">
+  <div class="container" style="position: relative; margin-top:-12px">
     <div class="row justify-content-between align-items-center">
       <div class="col-lg-3 col-md-3 col-3" style="display: inline-block;">
         <!-- Start Logo -->
-        <div class="logo" style="height: 80px; padding-left:25px">
+        <div class="logo" style="height: 98px">
           <a href="#">
             <div class="dfo-logo">
               <img src="/images/nepal_emblem_new.gif">
@@ -108,11 +108,15 @@
                   {{ app()->getLocale() == 'es'? 'नेपाल सरकार':'Nepal Government' }}
                 </span>
                 <span class="logo-address color-secondary">
-                  {{ app()->getLocale() == 'es'? 'वन तथा वातावरण मन्त्रालय / वन तथा भु संरक्षण बिभाग':'
-                                                            Ministry of Forests and Environment/Forest and Land Conservation Department' }}
+                  {{ app()->getLocale() == 'es'? 'वन तथा वातावरण मन्त्रालय':'
+                                                            Ministry of Forests and Environment' }}
+                </span>
+                 <span class="logo-address color-secondary">
+                  {{ app()->getLocale() == 'es'? 'वन तथा भु संरक्षण बिभाग':'
+                                                            Forest and Land Conservation Department' }}
                 </span>
                 <span class="logo-title color-primary"> {{ app()->getLocale() == 'es'? 'सामुदायिक वन अध्ययन केन्द्र (सी.एफ.एस.सी-नेपाल)':'Community Forest Study Center (CFSC-Nepal)' }}</span>
-                <span class="logo-address color-secondary"> {{ app()->getLocale() == 'es'? 'प्रदेश नं ३, नेपाल':'Province No. 3, Nepal' }} </span>
+                <span class="logo-address color-secondary"> {{ app()->getLocale() == 'es'? 'ववरमहल, काठ्माडाै':'Babarmahal, Kathmandu' }} </span>
               </div>
             </div>
           </a>

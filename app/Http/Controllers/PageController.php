@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\AboutUs;
 use App\Gallery;
 use App\ListCategory;
 use App\Lists;
+use App\Member;
 use App\MenuItem;
 use App\Page;
 use App\Slider;
@@ -15,12 +17,16 @@ class PageController extends Controller
     public function index()
     {
         $sliders = Slider::orderBy('order')->get();
+        $members = Member::orderBy('order')->limit(2)->get();
+        $aboutUs = AboutUs::get();
         $modal = Lists::where('modal', 1)->orderBy('created_at', 'desc')->get();
         $recent_notices = Lists::getCategory('notices')->orderBy('created_at', 'desc')->take(5)->get();
         $recent_programs = Lists::getCategory('programs')->orderBy('created_at', 'desc')->take(5)->get();
         $recent_resources = Lists::getCategory('downloads-others')->orderBy('created_at', 'desc')->take(5)->get();
         return view('index', compact(
             'sliders',
+            'members',
+            'aboutUs',
             'modal',
             'recent_notices',
             'recent_programs',

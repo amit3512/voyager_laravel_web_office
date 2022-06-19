@@ -22,7 +22,7 @@
           <li class="text-light mb-3">
             <address>{{ app()->getLocale() == 'es'? "ठेगाना: बबरमहल काठमाडौं":"Address:Babar Mahal Kathmandu"}}</address>
           </li>
-          <li class="text-light mb-3"><a href="tel:+977 036 420134">{{ app()->getLocale() == 'es'? "फोन: +९७७ १२३४५६७८९":"Phone: +977 123456789"}}</a> </li>
+          <li class="text-light mb-3"><a href="tel:+977 036 420134">{{ app()->getLocale() == 'es'? "फोन: ०१-५३४७५९९, ०१-५३५८४६८":"Phone: 01-5347599, 015358468"}}</a> </li>
           <li class="text-light mb-3"><a href="mailto: khodfo@dof.gov.np">{{ app()->getLocale() == 'es'? "ई-मेल": "email"}}: info@cfsc.gov.np</a></li>
         </ul>
         <!-- social links -->
@@ -41,14 +41,14 @@
     <div class="row">
       <div class="col-lg-7 col-md-12 text-center text-center text-lg-left mb-3 mb-md-0">
         @if(app()->getLocale() == 'es')
-              <p class="mb-0 text-white"> ©सर्वाधिकार@ <span id="year"></span> सामुदायिक वन अध्ययन केन्द्र (सी.एफ.एस.सी-नेपाल) - <span class="color"><a href="#">Sarangcode Technology Pvt.
+              <p class="mb-0 text-white"> ©सर्वाधिकार@ <span id="year"></span> सामुदायिक वन अध्ययन केन्द्र (सी.एफ.एस.सी-नेपाल) -<span class="color"><a href="http://goldstone.com.np/" target="_blank">GoldStone Consultancy Pvt.
               Ltd.</a></span>
               द्वारा निर्माणित
              
          @elseif(app()->getLocale() == 'en')
-            <p class="mb-0 text-white"> ©copyright@ <span id="year"></span> Community Forest Study Center (CFSC-Nepal) - <span class="color"><a href="#">Sarangcode Technology Pvt.
-              Ltd.</a></span>
-              manufactured
+            <p class="mb-0 text-white"> ©copyright@ <span id="year"></span> Community Forest Study Center (CFSC-Nepal) - <span class="color"><a href="http://goldstone.com.np/" target="_blank"> GoldStone Consultancy Pvt.
+              Ltd.
+           </a></span>
 
         @endif
       </div>

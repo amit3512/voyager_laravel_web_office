@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
 body * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 13px;
 }
 
@@ -9,14 +9,15 @@ body * {
     background: #131313;
 }
 
-.nav-bar li:hover{
+.nav-bar li:hover {
     color: black;
 }
 
-.form-group label.control-label{
+.form-group label.control-label {
     font-weight: 900;
 }
 
 .ace_editor.ace-github * {
-    font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    font: 12px / normal "Monaco", "Menlo", "Ubuntu Mono", "Consolas",
+        "source-code-pro", monospace;
 }

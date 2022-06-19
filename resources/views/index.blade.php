@@ -100,24 +100,27 @@
             </section>
         </div>
         <div class="col-lg-3 pl-lg-1 mt-2 mt-lg-0">
-            <div class="officer-card mt-3 mt-lg-0" style="">
+            <div class="officer-card mt-3 mt-lg-0">
+                @foreach ($members as $member)
                 <div class="officers">
                     <div class="officer-img">
-                        <img src="/images/blank-user.jpg">
+                        <img src="/images/shova-subedi.jpg">
                     </div>
                     <div class="officer-designation">
                         <strong>
-                            {{ app()->getLocale() == 'es'? 'कार्यलय प्रमुख':'Office Head' }}
+                            {{ app()->getLocale() == 'es'? $member->position:$member->position_eng }}
                         </strong>
                     </div>
                     <div class="officer-name">
 
-                        {{ app()->getLocale() == 'es'? 'मेरो नाम':'Name' }}
+                        {{ app()->getLocale() == 'es'? $member->name:$member->name_eng }}
                     </div>
                 </div>
-                <div class="officers">
+                @endforeach
+
+                <!-- <div class="officers">
                     <div class="officer-img">
-                        <img src="images/Bishnu-Gyawali.jpg">
+                        <img src="images/blank-user.jpg">
                     </div>
                     <div class="officer-designation">
                         <strong>
@@ -129,7 +132,7 @@
                     <div class="officer-name">
                         {{ app()->getLocale() == 'es'? 'बिष्णु प्रशाद घिमिरे':'Bishnu Prasad Adhikari' }}
                     </div>
-                </div>
+                </div> -->
             </div>
 
         </div>
@@ -140,7 +143,23 @@
 <section class="recentboards mt-4 mt-lg-2 p-0 mb-2">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 pr-3 pr-lg-2 recentnotice">
+            <div class="col-lg-9 pr-lg-1">
+                @foreach($aboutUs as $item)
+                <div class="about-content-block">
+                    <h3>{{ app()->getLocale() == 'es'?$item->title:$item->title_eng}}</h3>
+                    <div class="text mb-40 text-justify">
+                        <p>
+                            {{ app()->getLocale() == 'es'? 
+                                $item->description                   
+                                :
+                                $item->description_eng }}
+                        </p>
+                    </div>
+                    <div class="link-btn mb-30"><a href="{{ url(app()->getLocale() == 'es'? 'es/s/introduction':'en/s/introduction' ) }}" class="bttn"> {{ app()->getLocale() == 'es'? "थप पढ्नुहोस्":"Read More"}}</a></div>
+                </div>
+                @endforeach
+            </div>
+            <div class="col-lg-3 pl-lg-1 mt-2 mt-lg-0 recentnotice">
                 <div class="widget mb-40">
                     <h3 class="widget-title"> {{ app()->getLocale() == 'es'? 'पछिल्ला सूचना':'Recent Notices' }}</h3>
                     <ul class="lists">
@@ -170,31 +189,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="about-content-block">
-                    <h3>{{ app()->getLocale() == 'es'? "हाम्रो बारेमा":"About Us" }}</h3>
-                    <div class="text mb-40">
-                        <p>
-                            {{ app()->getLocale() == 'es'? 
-                                "
-                                            खोटाङ्ग जिल्ला नेपालको सात वटा प्रदेश मध्ये प्रदेश नं. १ अन्तर्गत सगरमाथा अञ्चलमा पर्ने पहाडी
-                                            जिल्ला हो । यस जिल्लामा करिव ५२.५४ प्रतिशत वनक्षेत्र रहेको छ । खोटाङ जिल्ला समुन्द्र सतहबाट
-                                            करीव १५२ मिटर देखि ३,६२० मिटरसम्मको उचाइमा रहेका कारण वनको किसिममा पनि भिन्नता रहेको पाईन्छ
-                                            । यस जिल्लामा खयर सिसौ लगायतका प्रजातीहरु देखी गोब्रे सल्ला, ठिंगुरे सल्ला,लौठ सल्ला,
-                                            अमेरिकन सल्ला, खोटेसल्ला , चिलाउने, कटुस, साज, कर्मा लगायतका प्रजातीहरु पाईन्छ । जिल्लाको
-                                            मुख्य वनलाइ यसरी उपोष्ण सदाबहार वन (Tropical Forest), मौसमी पतझर वन (Sub Tropical Broad
-                                            Leaved Forest) र समशितोष्ण कोणधारी वन (Upper Temperate Mixed Deciduous & Coniferous Forest)
-                                            गरी तिन प्रकारमा विभाजन गर्न सकिन्छ । खोटाङ्ग जिल्लाको कुल क्षेत्रफल १,५४,०२० हे. मध्य वनको
-                                            कुल क्षेत्रफल ८०,९२९ हे. रहेको छ जसमा सामुदायिक वनको क्षेत्रफल ४८६८५.५ हे., कवुलियती वनको
-                                            क्षेत्रफल ८८४.६५ हे. र बाँकी राष्ट्रिय वनको क्षेत्रफल ३१३८५.८५ हे. रहेको छ ।                                
-                                "
-                                :
-                                "About Us" }}
-                        </p>
-                    </div>
-                    <div class="link-btn mb-30"><a href="{{ url(app()->getLocale() == 'es'? 'es/s/introduction':'en/s/introduction' ) }}" class="bttn"> {{ app()->getLocale() == 'es'? "थप पढ्नुहोस्":"Read More"}}</a></div>
-                </div>
-            </div>
+
 
         </div>
     </div>
@@ -293,6 +288,34 @@
                             @endphp
                             <a href="{{$url}}" target="{{ $target }}">
                                 {{ app()->getLocale() == 'es'? $item->title:'Program Title' }}
+                            </a>
+                            @if($item->date)
+                            <span>{{$item->date}}</span>
+                            @endif
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 recentresources pl-3 pl-lg-0 mt-2 mt-lg-0">
+                <div class="widget mb-40">
+                    <h3 class="widget-title">{{ app()->getLocale() == 'es'? 'पछिल्ला सामग्री':'Recent Contents' }}</h3>
+                    <ul class="lists">
+                        @foreach ($recent_resources as $item)
+                        <li>
+                            @php
+                            $url = '#';
+                            if(!empty(json_decode($item->file))){
+                            $url = '/storage/'.json_decode($item->file)[0]->download_link;
+                            $target = '_blank';
+                            }
+
+                            if($item->body){
+                            $url = '/d/downloads-others'.'?id='.$item->id;
+                            $target = '_self';
+                            }
+                            @endphp
+                            <a href="{{$url}}" target="{{ $target }}">{{ app()->getLocale() == 'es'? $item->title:'Content Title' }}
                             </a>
                             @if($item->date)
                             <span>{{$item->date}}</span>
