@@ -147,6 +147,11 @@
                   @foreach (menu('dfo-khotang','_json') as $item)
                   <li class="{{ checkActive($item) }}">
                     <!-- <a href="{{$item->url}}">{{$item->title}} @if(!$item->children->isEmpty())<i class="icofont-rounded-down"></i>@endif</a> -->
+                    @if($item->url == "https://mis.cfsc.gov.np/login")
+                    <a href="{{$item->url}}">
+                      {{$item->title}}
+                    </a>
+                    @else
                     <a href="{{ url(app()->getLocale() == 'es'? 'es'.$item->url:'en'.$item->url ) }}">
                       @if(app()->getLocale()=="en")
                       @if($item->title == "गृह पृष्ठ")Home
@@ -159,8 +164,10 @@
                       @elseif( $item->title == "ग्यालरी")Gallery
                       @elseif( $item->title == "सम्पर्क")Contact
                       @elseif( $item->title == "सामुदायिक वनको राष्ट्रिय गोष्ठी")National Conference <br/> on Community Forests
+                      <!-- @else  {{$item->title}} -->
                       @endif
                       @elseif(app()->getLocale() == "es") {{$item->title}}
+                      @endif
                       @endif
 
                       @if(!$item->children->isEmpty())<i class="icofont-rounded-down"></i>@endif</a>
